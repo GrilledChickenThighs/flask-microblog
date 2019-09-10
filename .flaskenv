@@ -1,4 +1,10 @@
 FLASK_APP=microblog.py
-FLASK_DEBUG=1
+FLASK_DEBUG=0
 SECRET_KEY=1234
 DATABASE_URL=
+
+MAIL_SERVER=smtp.googlemail.com
+MAIL_PORT=587
+MAIL_USE_TLS=1
+MAIL_USERNAME=gmailuser@gmail.com
+MAIL_PASSWORD=gmailpassword
