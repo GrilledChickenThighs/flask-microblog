@@ -3,10 +3,14 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-
+from flask_mail import Mail
+from flask_uploads import UploadSet, IMAGES
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
+from flask.e
+
+bootstrap = Bootstrap(app)
 
 server = Flask(__name__)
 server.config.from_object(Config)
@@ -16,6 +20,12 @@ migrate = Migrate(server, db)
 # Login Manager
 login = LoginManager(server)
 login.login_view = 'login'  # Redirects users to login if they try to view protected page
+
+# Email Manager
+mail = Mail(server)
+
+# Upload Managger
+photos = UploadSet('photos', IMAGES)
 
 
 
